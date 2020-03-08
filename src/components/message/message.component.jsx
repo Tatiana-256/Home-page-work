@@ -2,14 +2,11 @@ import React from "react";
 import styles from './message.module.css';
 
 
-
-
-const Message=()=>{
-    let now = new Date()
+const Message = () => {
     return <div className={styles.main}>
-        <div></div>
-        <textarea placeholder="Your message"></textarea>
-        {/*<div>{now}</div>*/}
+        <div>Well-motivated Junior Front-end Developer looking for an opportunity to implement my skills in JavaScript
+            and React. I have knowledge in JavaScript ES6 and ES5. Also I have a practice with Git
+        </div>
     </div>
 }
 

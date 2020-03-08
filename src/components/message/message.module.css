@@ -1,5 +1,13 @@
-.main{
+.main {
     width: 80%;
     display: flex;
     justify-content: flex-start;
+    margin-left: 60%;
+
+}
+
+textarea {
+    resize: none;
+    width: 300px;
+    height: 80px
 }
