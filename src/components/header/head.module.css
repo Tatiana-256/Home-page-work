@@ -1,0 +1,8 @@
+.head{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: aliceblue;
+
+}
+
