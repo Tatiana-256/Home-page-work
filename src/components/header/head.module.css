@@ -4,3 +4,9 @@
     justify-content: space-around;
 }
 
+img{
+    height: 15ch;
+    width: auto;
+    border-radius: 40%;
+}
+
