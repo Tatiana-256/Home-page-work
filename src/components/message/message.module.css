@@ -1,10 +1,12 @@
 
 .general {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
     box-shadow: 0 0 2px rgba(0, 0, 0, .5);
     background-color: #fff;
     border-radius: 5px;
     position: relative;
-    margin: 20px 20px 0 74px;
     font-size: .88rem;
     min-height: 65px;
     color: #2b2521;
@@ -22,7 +24,7 @@
     border: 40px solid transparent;
     border-right-color: #6bbdff;
     top: 19px;
-    left: -7%;
+    left: -13%;
     -webkit-transition: border .3s ease;
     transition: border .3s ease;
 }
@@ -36,7 +38,7 @@
 
 .data {
     box-shadow: 0 0 3px rgba(0, 0, 0, .5);
-    margin-left: 20%;
+    margin-left: 35%;
     background-color: #6bbdff;
     border-radius: 5px;
     position: relative;
@@ -49,7 +51,6 @@
 }
 
 .text {
-    /*transition: all .3s linear;*/
     line-height: 1.7;
     padding-top: .5em;
     word-wrap: break-word;
@@ -57,8 +58,8 @@
 
 textarea {
 
-    height: 50%;
-    /*resize: none;*/
+    height: auto;
+    resize: none;
     width: 100%;
     max-width: 100% !important;
 }
