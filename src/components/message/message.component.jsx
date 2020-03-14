@@ -21,7 +21,7 @@ const Message = () => {
             <div>
                 {
                     characteristics.map(a => {
-                            if (a.id == 2) {
+                            if (a.id === 2) {
                                 return <div className={styles.bold} key={a.id}>{a.character}</div>
                             } else {
                                 return <div key={a.id}>{a.character}</div>
@@ -35,7 +35,7 @@ const Message = () => {
             <div>
                 <a>Матвиенко Татьяна Юрьевна</a>
             </div>
-            <textarea className={styles.text} placeholder='Your message'></textarea>
+            <textarea className={styles.text} placeholder='Your message'/>
             <div className={styles.time}>
                 <div>{date}</div>
                 <div>{time}</div>
