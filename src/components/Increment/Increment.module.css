@@ -1,0 +1,25 @@
+.page {
+    display: flex;
+    justify-content: center;
+}
+
+.general {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+span, button{
+    font-size: 25px;
+    font-family: "Adobe Garamond Pro Bold";
+}
+input{
+    width: 40%;
+}
+
+button{
+    border-color: blue;
+    background-color: aqua;
+}
