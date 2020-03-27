@@ -29,12 +29,12 @@ class Increment extends React.Component {
             <div className={styles.general}>
                 <span>{this.state.value}</span>
                 <input ref={this.newNameRef} type="text" placeholder="New name"/>
-                <button onClнфick={(this.increment)}>
+                <button onClick={(this.increment)}>
                     Increment and add name
                 </button>
             </div>
             <div>
-                {this.state.name.map(name => <Names name={name}/>)}
+                {this.state.name.map(name => <Names name={name} key={Date.now().toString()}/>)}
             </div>
         </div>
 
