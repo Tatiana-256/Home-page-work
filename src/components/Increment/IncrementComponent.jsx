@@ -25,19 +25,20 @@ class Increment extends React.Component {
 
     render() {
 
-        return <div className={styles.page}>
-            <div className={styles.general}>
-                <span>{this.state.value}</span>
-                <input ref={this.newNameRef} type="text" placeholder="New name"/>
-                <button onClick={(this.increment)}>
-                    Increment and add name
-                </button>
-            </div>
-            <div>
-                {this.state.name.map(name => <Names name={name} key={Date.now().toString()}/>)}
+        return <div>
+            <div className={styles.page}>
+                <div className={styles.general}>
+                    <span>{this.state.value}</span>
+                    <input ref={this.newNameRef} type="text" placeholder="New name"/>
+                    <button onClick={(this.increment)}>
+                        Increment and add name
+                    </button>
+                </div>
+                <div>
+                    {this.state.name.map(name => <Names name={name} key={name.index}/>)}
+                </div>
             </div>
         </div>
-
     }
 }
 
