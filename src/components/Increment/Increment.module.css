@@ -10,16 +10,17 @@
 
 }
 
-
-span, button{
+span, button {
     font-size: 25px;
     font-family: "Adobe Garamond Pro Bold";
 }
-input{
+
+input {
     width: 40%;
 }
 
-button{
+button {
     border-color: blue;
     background-color: aqua;
 }
+
