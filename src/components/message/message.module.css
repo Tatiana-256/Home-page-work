@@ -64,13 +64,4 @@ textarea {
     max-width: 100% !important;
 }
 
-.time {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
-}
-
-.time div {
-    margin-left: 10px;
-}
 

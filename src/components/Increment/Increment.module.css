@@ -10,7 +10,7 @@
 
 }
 
-span, button {
+span, .btn {
     font-size: 25px;
     font-family: "Adobe Garamond Pro Bold";
 }
@@ -19,8 +19,8 @@ input {
     width: 40%;
 }
 
-button {
-    border-color: blue;
-    background-color: aqua;
+.btn {
+    border-color: #30e7ff;
+    background-color: rgba(102, 255, 235, 0.49);
 }
 

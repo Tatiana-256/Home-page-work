@@ -1,0 +1,18 @@
+.nav {
+    height: 40px;
+    display: flex;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-top: 50px;
+    letter-spacing: 2px;
+    font-family: Comic Sans MS;
+    font-size: 23px;
+    color: rgb(0, 0, 94);
+    text-decoration: none;
+}
+
+.nav .activeLink {
+    color: #4e0059;
+    text-shadow: rgb(37, 37, 37) 0 0 1px;
+}
+

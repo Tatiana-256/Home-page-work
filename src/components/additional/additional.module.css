@@ -1,0 +1,9 @@
+.add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 90px;
+    font-family: "Adobe Garamond Pro Bold";
+    color: blueviolet;
+}

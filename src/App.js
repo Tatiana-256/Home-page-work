@@ -1,19 +1,19 @@
 import React from 'react';
 import './App.css';
-import Header from "./components/header/head.component";
-import Message from "./components/message/message.component";
-import Characteristics from "./components/character/character";
-import Increment from "./components/Increment/IncrementComponent";
+import MessageBox from "./MessageBox.component";
+import Navigation from "./components/navigation/navigation.component";
+import {Route} from "react-router-dom";
+import AdditionalPage from "./components/additional/additional.component";
+
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <Header/>
-                <Message/>
-                <Characteristics/>
-                <Increment/>
-            </header>
+            <Navigation/>
+            <Route exact path="/monday" component={MessageBox}/>
+            <Route exact path="/tuesday" component={AdditionalPage}/>
+
+
         </div>
     );
 }
