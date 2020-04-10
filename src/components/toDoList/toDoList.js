@@ -3,17 +3,12 @@ import './ToDoList.css';
 import TodoListHeader from "./TodoListHeader";
 import TodoListTasks from "./TodoListTasks";
 import TodoListFooter from "./TodoListFooter";
-import {restoreState, saveState} from "./state";
+import {restoreState, saveState} from "./localStorage";
 
 class ToDoList extends React.Component {
     constructor(props) {
         super(props);
 
-    }
-
-    componentDidMount() {
-        // this.restoreState()
-        restoreState.bind('our-state', this.state, this.nextTaskId)
     }
 
     state = {
@@ -24,29 +19,17 @@ class ToDoList extends React.Component {
 
     nextTaskId = 0
 
-    /*saveState = () => {
-        saveState(this.state)
-        // localStorage.setItem('our-state', JSON.stringify(this.state))
-    }*/
-
-    // restoreState = () => {
-    //     // restoreState()
-    //     let state = {
-    //         task: [],
-    //         filterValue: "All"
-    //     }
-    //     let stateAsString = localStorage.getItem('our-state')
-    //     if (stateAsString) {
-    //         state = JSON.parse(stateAsString)
-    //     }
-    //     this.setState(state, () => {
-    //         this.state.tasks.forEach(task => {
-    //             if (task.id >= this.nextTaskId) {
-    //                 this.nextTaskId = task.id + 1
-    //             }
-    //         })
-    //     })
-    // }
+    componentDidMount() {
+        let newState = restoreState('our-state', this.state, this.nextTaskId)
+        debugger
+        this.setState(newState, () => {
+            this.state.tasks.forEach(task => {
+                if (task.id >= this.nextTaskId) {
+                    this.nextTaskId = task.id + 1
+                }
+            })
+        })
+    }
 
     onAddTaskClick = (newText) => {
         let newTask = {
@@ -94,7 +77,7 @@ class ToDoList extends React.Component {
 
     deleteTask = (task) => {
         let updateTask = this.state.tasks.filter(t => t.id !== task.id)
-        this.setState({tasks: updateTask}, ()=> {
+        this.setState({tasks: updateTask}, () => {
             saveState('our-state', this.state)
         })
     }
@@ -106,7 +89,7 @@ class ToDoList extends React.Component {
                 <div className="todoList">
                     <TodoListHeader onAddTaskClick={this.onAddTaskClick}/>
                     <TodoListTasks
-                        deleteTask = {this.deleteTask}
+                        deleteTask={this.deleteTask}
                         changeTitle={this.changeTitle}
                         changeStatus={this.changeStatus}
                         tasks={this.state.tasks.filter(t => {
