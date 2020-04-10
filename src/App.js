@@ -3,7 +3,7 @@ import './App.css';
 import MessageBox from "./MessageBox.component";
 import Navigation from "./components/navigation/navigation.component";
 import {Route} from "react-router-dom";
-import AdditionalPage from "./components/additional/additional.component";
+import ToDoList from "./components/toDoList/toDoList";
 
 
 function App() {
@@ -11,9 +11,7 @@ function App() {
         <div className="App">
             <Navigation/>
             <Route exact path="/monday" component={MessageBox}/>
-            <Route exact path="/tuesday" component={AdditionalPage}/>
-
-
+            <Route exact path="/tuesday" component={ToDoList}/>
         </div>
     );
 }

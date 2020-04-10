@@ -29,7 +29,7 @@ class Increment extends React.Component {
             <div className={styles.page}>
                 <div className={styles.general}>
                     <span>{this.state.value}</span>
-                    <input ref={this.newNameRef} type="text" placeholder="New name"/>
+                    <input className={styles.inp} ref={this.newNameRef} type="text" placeholder="New name"/>
                     <button onClick={(this.increment)} className={styles.btn}>
                         Increment and add name
                     </button>

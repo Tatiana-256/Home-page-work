@@ -46,8 +46,10 @@ class TextMessage extends React.Component {
 
         return (<div>
             {this.state.messages.map(m => <div key={m}>{m}</div>)}
-            <input className={this.state.error ? styles.error : ''} placeholder='Your message' value={this.state.title}
-                   onChange={this.onTitleChange} onKeyPress={this.onKeyPress}/>
+            <div className={styles.inp}>
+                <input className={this.state.error ? styles.error : ''} placeholder='Your message'
+                       value={this.state.title}
+                       onChange={this.onTitleChange} onKeyPress={this.onKeyPress}/></div>
             <button className={styles.btn} onClick={this.onAddClick}>Add message</button>
             <div className={styles.time}>
                 <div>{date}</div>
