@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./components/header/head.component";
-import Message from "./components/message/message.component";
-import Characteristics from "./components/character/character";
+import Header from "./components/header/Head.component";
+import Message from "./components/message/Message.component";
+import Characteristics from "./components/character/Сharacter";
 import Increment from "./components/Increment/IncrementComponent";
 
 const MessageBox = () => {

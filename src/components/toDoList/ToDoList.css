@@ -19,3 +19,26 @@
 .error {
     border-color: red;
 }
+
+button{
+    height: 20px;
+    width: 40px;
+    font-size: 10px
+}
+
+.low {
+    background-color: greenyellow;
+    font-size: 10px;
+}
+
+.average {
+    background-color: orange;
+}
+
+.high {
+    background-color: red;
+}
+
+.text{
+    font-size: 15px;
+}

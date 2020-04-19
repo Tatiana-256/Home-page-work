@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './Increment.module.css';
-import Names from "../Names/names";
+import Names from "../Names/Names";
 
 
 class Increment extends React.Component {

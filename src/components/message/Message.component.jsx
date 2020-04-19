@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './message.module.css';
 import avatar from "../../common/header.JPG";
-import TextMessage from "../textMessage/textMessage.component";
+import TextMessage from "../textMessage/TextMessage.component";
 
 
 const Message = () => {

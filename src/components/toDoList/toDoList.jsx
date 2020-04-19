@@ -14,14 +14,14 @@ class ToDoList extends React.Component {
     state = {
         tasks: [],
         filterValue: "All",
+        priority: 'low'
 
     }
 
     nextTaskId = 0
 
     componentDidMount() {
-        let newState = restoreState('our-state', this.state, this.nextTaskId)
-        debugger
+        let newState = restoreState('our-state', this.state)
         this.setState(newState, () => {
             this.state.tasks.forEach(task => {
                 if (task.id >= this.nextTaskId) {
@@ -82,6 +82,7 @@ class ToDoList extends React.Component {
         })
     }
 
+
     render = () => {
 
         return (
@@ -89,6 +90,7 @@ class ToDoList extends React.Component {
                 <div className="todoList">
                     <TodoListHeader onAddTaskClick={this.onAddTaskClick}/>
                     <TodoListTasks
+                        priority ={this.priority}
                         deleteTask={this.deleteTask}
                         changeTitle={this.changeTitle}
                         changeStatus={this.changeStatus}
