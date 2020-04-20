@@ -3,7 +3,7 @@ import './App.css';
 import MessageBox from "./MessageBox.component";
 import Navigation from "./components/navigation/Navigation.component";
 import {Route} from "react-router-dom";
-import ToDoList from "./components/toDoList/toDoList";
+import ToDoList from "./components/toDoList/ToDoList";
 import styles from './components/toDoList/loader.module.css'
 
 
