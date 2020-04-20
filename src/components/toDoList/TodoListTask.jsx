@@ -1,39 +1,10 @@
 import React from 'react';
 import './ToDoList.css';
-import {restoreState, saveState} from "./localStorage";
 
 class TodoListTask extends React.Component {
 
     state = {
         editMode: false,
-        priority: 'low'
-    }
-
-    componentDidMount() {
-        let newState = restoreState('priority', this.state)
-        this.setState(newState, ()=>{
-          return   this.state.priority
-        })
-    }
-
-    onChangePriorityOfTaskLow = () => {
-        this.setState({priority: 'low'}, () => {
-                saveState('priority', this.state)
-            }
-        )
-    }
-
-    onChangePriorityOfTaskAverage = () => {
-        this.setState({priority: 'average'}, () => {
-                saveState('priority', this.state)
-            }
-        )
-    }
-    onChangePriorityOfTaskHigh = () => {
-        this.setState({priority: 'high'}, () => {
-                saveState('priority', this.state)
-            }
-        )
     }
 
     activateEditMode = () => {
@@ -59,8 +30,6 @@ class TodoListTask extends React.Component {
 
 
     render() {
-        console.log(this.props.priority)
-
         return <div className="">
             <div className="todoList-tasks">
 
@@ -78,17 +47,17 @@ class TodoListTask extends React.Component {
                             {this.props.task.id} - {this.props.task.title}
                         </span>}
                     <button className="low" onClick={() => {
-                        this.onChangePriorityOfTaskLow()
+                        this.props.onChangePriorityOfTask(this.props.task.id, 'low')
                     }}>low
                     </button>
                     <button
-                        className={this.state.priority === 'average' || this.state.priority === 'high' ? 'average' : ''}
+                        className={this.props.priority === 'average' || this.props.priority === 'high' ? 'average' : ''}
                         onClick={() => {
-                            this.onChangePriorityOfTaskAverage()
+                            this.props.onChangePriorityOfTask(this.props.task.id, 'average')
                         }}>middle
                     </button>
-                    <button className={this.state.priority === 'high' ? 'high' : ''} onClick={() => {
-                        this.onChangePriorityOfTaskHigh()
+                    <button className={this.props.priority === 'high' ? 'high' : ''} onClick={() => {
+                        this.props.onChangePriorityOfTask(this.props.task.id, 'high')
                     }}>high
                     </button>
                     <span className='text'>Priority of task</span>

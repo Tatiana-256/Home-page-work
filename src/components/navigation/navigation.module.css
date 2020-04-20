@@ -11,6 +11,10 @@
     text-decoration: none;
 }
 
+.navigation{
+    display: flex;
+}
+
 .nav .activeLink {
     color: #4e0059;
     text-shadow: rgb(37, 37, 37) 0 0 1px;

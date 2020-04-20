@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import styles from './navigation.module.css'
 
 const Navigation = () => {
-    return (<div>
+    return (<div className={styles.navigation}>
         <div className={styles.nav}><NavLink activeClassName={styles.activeLink} to="/monday">
             Monday
         </NavLink>

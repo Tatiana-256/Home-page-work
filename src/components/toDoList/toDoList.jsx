@@ -15,7 +15,6 @@ class ToDoList extends React.Component {
         tasks: [],
         filterValue: "All",
         priority: 'low'
-
     }
 
     nextTaskId = 0
@@ -83,6 +82,17 @@ class ToDoList extends React.Component {
     }
 
 
+    onChangePriorityOfTask = (taskId, priority) => {
+        let newtasks = this.state.tasks.map(task => {
+            if (task.id === taskId) return {...task, priority: priority}
+            else return  task
+        })
+        this.setState({tasks: newtasks}, () => {
+                saveState('our-state', this.state)
+            }
+        )
+    }
+
     render = () => {
 
         return (
@@ -90,7 +100,8 @@ class ToDoList extends React.Component {
                 <div className="todoList">
                     <TodoListHeader onAddTaskClick={this.onAddTaskClick}/>
                     <TodoListTasks
-                        priority ={this.priority}
+                        onChangePriorityOfTask={this.onChangePriorityOfTask}
+                        priority ={this.state.priority}
                         deleteTask={this.deleteTask}
                         changeTitle={this.changeTitle}
                         changeStatus={this.changeStatus}

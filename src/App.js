@@ -16,19 +16,18 @@ class App extends React.Component {
     timer = () => {
         return setTimeout(() => {
             this.setState({loader: false})
-        }, 0)
+        }, 3000)
     }
 
     componentDidMount() {
         this.timer()
     }
 
-
     render() {
         // return (
         if (this.state.loader === true) {
             return <div className={styles.position}>
-                <div className={styles.loader}></div>
+                <div className={styles.loader}/>
             </div>
         } else if (this.state.loader === false) {
             return (
@@ -39,8 +38,6 @@ class App extends React.Component {
                 </div>
             )
         }
-        // )
-        ;
     }
 }
 
