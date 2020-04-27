@@ -16,7 +16,7 @@ class App extends React.Component {
     timer = () => {
         return setTimeout(() => {
             this.setState({loader: false})
-        }, 3000)
+        }, 0)
     }
 
     componentDidMount() {
@@ -24,7 +24,6 @@ class App extends React.Component {
     }
 
     render() {
-        // return (
         if (this.state.loader === true) {
             return <div className={styles.position}>
                 <div className={styles.loader}/>

@@ -22,6 +22,11 @@
     font-size: 10px
 }
 
+
+.prior{
+    display: flex;
+}
+
 .low {
     background-color: greenyellow;
     font-size: 10px;
@@ -37,4 +42,26 @@
 
 .text{
     font-size: 15px;
+}
+
+
+div.list div.inner {
+    display: none;
+}
+div.list:hover div.inner {
+    display: flex;
+    flex-direction: column;
+    margin-left: 120px;
+    z-index: 1;
+    padding: 2px 30px;
+    text-align: center;
+    width: 150px;
+    background-color: #fff;
+    border: 2px solid #666;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: 2px 2px 4px #888;
+    -moz-box-shadow: 2px 2px 4px #888;
+    box-shadow: 2px 2px 4px #888;
 }
