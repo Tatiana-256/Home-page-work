@@ -3,7 +3,7 @@ import React from 'react';
 class TodoListHeader extends React.Component {
 
     state = {
-        error: true,
+        error: false,
         title: ''
     }
 
@@ -43,7 +43,7 @@ class TodoListHeader extends React.Component {
                            type="text"
                            onKeyPress={this.onKeyPress}
                            placeholder="New task name"
-                           className={this.state.error ? 'error' : ''}
+                           className={this.state.error ? 'error' : 'input'}
                     />
                     <button onClick={this.onAddTaskClick} >Add</button>
                 </div>

@@ -15,7 +15,9 @@ class ToDoList extends React.Component {
         tasks: [],
         filterValue: "All",
         priority: 'low',
-        addTaskTime: ''
+        created: '',
+        updated: '',
+        finished: ''
     }
 
     nextTaskId = 0
@@ -34,7 +36,7 @@ class ToDoList extends React.Component {
     onAddTaskClick = (newText) => {
         let newTask = {
             id: this.nextTaskId,
-            addTaskTime: Date(),
+            created: Date().slice(0, -45),
             title: newText,
             isDone: false,
             priority: 'low'
@@ -54,14 +56,14 @@ class ToDoList extends React.Component {
     }
 
     changeStatus = (taskId, isDone) => {
-        this.changeTask(taskId, {isDone: isDone})
+        this.changeTask(taskId, {isDone: isDone, finished: Date().slice(0, -45)})
     }
 
     changeTitle = (taskId, title) => {
-        this.changeTask(taskId, {title: title})
+        this.changeTask(taskId, {title: title, updated: Date().slice(0, -45)})
 
     }
-
+    
     changeTask = (taskId, obj) => {
         let newTasks = this.state.tasks.map(t => {
                 if (t.id != taskId) {

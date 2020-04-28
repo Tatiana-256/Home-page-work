@@ -6,7 +6,6 @@ class TodoListTasks extends React.Component {
     render() {
         let taskElements = this.props.tasks.map(task => {
             return <TodoListTask
-                time={this.props.time}
                 onChangePriorityOfTask={this.props.onChangePriorityOfTask}
                 priority={task.priority}
                 key={task.id}

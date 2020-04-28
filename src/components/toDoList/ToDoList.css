@@ -1,6 +1,12 @@
 .todoList {
-    width: 500px;
+    width: 400px;
     margin: 0 auto;
+    text-align: center;
+}
+
+.input,
+.error{
+    width: 250px;
 }
 
 .todoList > div {
@@ -8,28 +14,48 @@
 }
 
 .filter-active {
-    background-color: blue;
+    background-color: #f8ff6f;
+
 }
 
+
+.filter-active, .stand {
+    height: 30px;
+    width: 100px;
+    margin: 10px 10px;
+}
 
 .error {
     border-color: red;
 }
 
-.todoList-task button{
+
+
+.todoList-task {
+    border: 1px solid black;
+    margin-bottom: 25px;
+    background-color: ghostwhite;
+}
+
+.delete {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.todoList-task button {
     height: 20px;
     width: 40px;
     font-size: 10px
 }
 
 
-.prior{
+.prior {
     display: flex;
 }
 
 .low {
     background-color: greenyellow;
-    font-size: 10px;
 }
 
 .average {
@@ -40,7 +66,7 @@
     background-color: red;
 }
 
-.text{
+.text {
     font-size: 15px;
 }
 
@@ -48,14 +74,16 @@
 div.list div.inner {
     display: none;
 }
+
 div.list:hover div.inner {
+    text-align: left;
     display: flex;
+    position: absolute;
     flex-direction: column;
-    margin-left: 120px;
     z-index: 1;
+    margin-left: 220px;
     padding: 2px 30px;
-    text-align: center;
-    width: 150px;
+    width: 350px;
     background-color: #fff;
     border: 2px solid #666;
     -webkit-border-radius: 20px;

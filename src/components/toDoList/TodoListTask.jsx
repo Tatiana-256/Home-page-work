@@ -30,34 +30,54 @@ class TodoListTask extends React.Component {
 
     onChangePriority = (event) => {
         this.props.onChangePriorityOfTask(this.props.task.id, event.target.value)
-        debugger
+    }
+
+     classSelect = () => {
+        if (this.props.task.priority === "low") {
+            return 'low'
+        } else if (this.props.task.priority === "average") {
+            return 'average'
+        } else if (this.props.task.priority === "high") {
+            return 'high'
+        }
     }
 
     render() {
-        return <div className="">
-            <div className="todoList-tasks">
 
-                <div className="todoList-task">
-                    <div className="list">
-                        <button onClick={this.onDeleteTask}>x</button>
-                        <input
-                            onChange={this.onIsDoneChanges}
-                            type="checkbox" checked={this.props.task.isDone}/>
-                        {this.state.editMode ?
-                            <input onBlur={this.deActivateEditMode}
-                                   onChange={this.onTitleChanged}
-                                   autoFocus={true}
-                                   value={this.props.task.title}/> :
-                            <span onClick={this.activateEditMode}>
+        return (
+            <div className="">
+                <div className="todoList-tasks">
+                    <div className="todoList-task">
+                        <div className='delete'>
+                            <div> Delete task</div>
+                            <div>
+                                <button onClick={this.onDeleteTask}>x</button>
+                            </div>
+                        </div>
+                        <div className="list">
+                            <input
+                                onChange={this.onIsDoneChanges}
+                                type="checkbox" checked={this.props.task.isDone}/>
+                            {this.state.editMode ?
+                                <input onBlur={this.deActivateEditMode}
+                                       onChange={this.onTitleChanged}
+                                       autoFocus={true}
+                                       value={this.props.task.title}/> :
+                                <span onClick={this.activateEditMode}>
                             {this.props.task.id} - {this.props.task.title}
                         </span>}
-                        <div className="inner">
-                            <div>Created: {this.props.task.time}</div>
-                            <div>Task: {this.props.task.isDone === true ? " Done" : ' In progress'}</div>
+                            <div className="inner">
+                                <div>Created: {this.props.task.created}</div>
+                                {this.props.task.updated ? <div>Updated: {this.props.task.updated}</div> : ""}
+                                {this.props.task.finished ? <div>Finished: {this.props.task.finished}</div> : ''}
+                                <div>Task: {this.props.task.isDone === true ? " Done" : ' In progress'}</div>
+                            </div>
                         </div>
-
                         <div className='prior'>
-                            <select onChange={this.onChangePriority}>
+                            <select
+                                className={this.classSelect()}
+                                value={this.props.task.priority}
+                                onChange={this.onChangePriority}>
                                 <option>Select priority:</option>
                                 <option value="low" className='low'>low</option>
                                 <option value="average" className='average'>average</option>
@@ -66,23 +86,8 @@ class TodoListTask extends React.Component {
                             </select>
                         </div>
                     </div>
-                    {/*<button className="low" onClick={() => {*/}
-                    {/*    this.props.onChangePriorityOfTask(this.props.task.id, 'low')*/}
-                    {/*}}>low*/}
-                    {/*</button>*/}
-                    {/*<button*/}
-                    {/*    className={this.props.priority === 'average' || this.props.priority === 'high' ? 'average' : ''}*/}
-                    {/*    onClick={() => {*/}
-                    {/*        this.props.onChangePriorityOfTask(this.props.task.id, 'average')*/}
-                    {/*    }}>middle*/}
-                    {/*</button>*/}
-                    {/*<button className={this.props.priority === 'high' ? 'high' : ''} onClick={() => {*/}
-                    {/*    this.props.onChangePriorityOfTask(this.props.task.id, 'high')*/}
-                    {/*}}>high*/}
-                    {/*</button>*/}
                 </div>
-            </div>
-        </div>
+            </div>)
     }
 }
 
