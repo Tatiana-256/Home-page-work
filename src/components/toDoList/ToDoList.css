@@ -5,7 +5,7 @@
 }
 
 .input,
-.error{
+.error {
     width: 250px;
 }
 
@@ -13,11 +13,17 @@
     padding: 10px;
 }
 
+.list {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
 .filter-active {
     background-color: #f8ff6f;
 
 }
-
 
 .filter-active, .stand {
     height: 30px;
@@ -29,8 +35,6 @@
     border-color: red;
 }
 
-
-
 .todoList-task {
     border: 1px solid black;
     margin-bottom: 25px;
@@ -39,8 +43,8 @@
 
 .delete {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    justify-content: space-between;
+    margin-left: 65%;
 }
 
 .todoList-task button {
@@ -48,7 +52,6 @@
     width: 40px;
     font-size: 10px
 }
-
 
 .prior {
     display: flex;
@@ -70,18 +73,16 @@
     font-size: 15px;
 }
 
-
-div.list div.inner {
+div.all div.inner {
     display: none;
 }
 
-div.list:hover div.inner {
+div.all:hover div.inner {
     text-align: left;
     display: flex;
     position: absolute;
     flex-direction: column;
     z-index: 1;
-    margin-left: 220px;
     padding: 2px 30px;
     width: 350px;
     background-color: #fff;

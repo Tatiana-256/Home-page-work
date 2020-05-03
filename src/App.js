@@ -5,18 +5,19 @@ import Navigation from "./components/navigation/Navigation.component";
 import {Route} from "react-router-dom";
 import ToDoList from "./components/toDoList/ToDoList";
 import styles from './components/toDoList/loader.module.css'
+import {connect} from "react-redux";
 
 
 class App extends React.Component {
     state = {
-        loader: true
+        loader: false
     }
 
 
     timer = () => {
         return setTimeout(() => {
-            this.setState({loader: false})
-        }, 0)
+            this.props.changeLoading()
+        }, 3000)
     }
 
     componentDidMount() {
@@ -24,11 +25,11 @@ class App extends React.Component {
     }
 
     render() {
-        if (this.state.loader === true) {
+        if (this.props.loading === true) {
             return <div className={styles.position}>
                 <div className={styles.loader}/>
             </div>
-        } else if (this.state.loader === false) {
+        } else {
             return (
                 <div className="App">
                     <Navigation/>
@@ -40,4 +41,23 @@ class App extends React.Component {
     }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        loading: state.loading
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        changeLoading: () => {
+            const action = {
+                type: 'SET_LOADING',
+                loading: false
+            }
+            dispatch(action)
+        }
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
