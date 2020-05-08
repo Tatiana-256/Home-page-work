@@ -6,6 +6,7 @@ import {Route} from "react-router-dom";
 import ToDoList from "./components/toDoList/ToDoList";
 import styles from './components/toDoList/loader.module.css'
 import {connect} from "react-redux";
+import {changeLoading} from "./components/store/actions";
 
 
 class App extends React.Component {
@@ -50,11 +51,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         changeLoading: () => {
-            const action = {
-                type: 'SET_LOADING',
-                loading: false
-            }
-            dispatch(action)
+            dispatch(changeLoading())
         }
 
     }
