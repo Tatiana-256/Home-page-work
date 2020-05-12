@@ -1,4 +1,5 @@
-import {SET_BLACK_STYLE, SET_LOADING, SET_PINK_STYLE, SET_REGULAR_STYLE} from "./store";
+import {SET_LOADING} from "./loading-reducer";
+import {SET_BLACK_STYLE, SET_PINK_STYLE, SET_REGULAR_STYLE} from "./style-reducer";
 
 
 export const changeLoading = () => {

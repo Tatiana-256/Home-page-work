@@ -19,7 +19,7 @@ class App extends React.Component {
     timer = () => {
         return setTimeout(() => {
             this.props.changeLoading()
-        }, 0)
+        }, 3000)
     }
 
     componentDidMount() {
@@ -47,7 +47,7 @@ class App extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        loading: state.loading
+        loading: state.loading.loading
     }
 }
 
