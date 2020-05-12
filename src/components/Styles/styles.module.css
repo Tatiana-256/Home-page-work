@@ -1,0 +1,55 @@
+
+.black,
+.pink,
+.regular {
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 30px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.btn {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+.pink {
+    background-color: #ff8fce;
+    color: #8500cd;
+
+}
+
+.regular {
+    background-color: #6bbdff;
+    color: black;
+}
+
+.b,
+.r,
+.p {
+
+    border: 2px solid white;
+    color: white;
+    font-size: 40px;
+}
+
+.b {
+    background-color: black;
+}
+
+.p {
+    background-color: purple;
+}
+
+.r {
+    background-color: #0065ff;
+}

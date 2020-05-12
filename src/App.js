@@ -7,6 +7,7 @@ import ToDoList from "./components/toDoList/ToDoList";
 import styles from './components/toDoList/loader.module.css'
 import {connect} from "react-redux";
 import {changeLoading} from "./components/store/actions";
+import Wednesday from "./components/Styles/Wednesday_Styles";
 
 
 class App extends React.Component {
@@ -18,7 +19,7 @@ class App extends React.Component {
     timer = () => {
         return setTimeout(() => {
             this.props.changeLoading()
-        }, 3000)
+        }, 0)
     }
 
     componentDidMount() {
@@ -36,6 +37,8 @@ class App extends React.Component {
                     <Navigation/>
                     <Route exact path="/monday" component={MessageBox}/>
                     <Route exact path="/tuesday" component={ToDoList}/>
+                    <Route exact path="/wednesday" component={Wednesday}/>
+
                 </div>
             )
         }
