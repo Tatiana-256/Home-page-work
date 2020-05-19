@@ -1,5 +1,5 @@
 import {SET_LOADING} from "./loading-reducer";
-import {SET_BLACK_STYLE, SET_PINK_STYLE, SET_REGULAR_STYLE} from "./style-reducer";
+import {CHANGE_SUCCESS, SET_BLACK_STYLE, SET_PINK_STYLE, SET_REGULAR_STYLE} from "./style-reducer";
 
 
 export const changeLoading = () => {
@@ -22,5 +22,10 @@ export const changeOnPink = () => {
 export const changeOnRegular = () => {
     return {
         type: SET_REGULAR_STYLE
+    }
+}
+export const changeSuccess = () => {
+    return {
+        type: CHANGE_SUCCESS
     }
 }

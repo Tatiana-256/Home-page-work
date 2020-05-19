@@ -2,6 +2,7 @@ import React from 'react';
 import style from './styles.module.css'
 import {connect} from "react-redux";
 import {changeOnBlack, changeOnPink, changeOnRegular} from "../store/actions";
+import RequestAPI from "./RequestAPI";
 
 
 const Wednesday = (props) => {
@@ -25,6 +26,7 @@ const Wednesday = (props) => {
         </div>
         <div>
             There is Wednesday page
+            <RequestAPI/>
         </div>
     </div>
 }

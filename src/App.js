@@ -19,7 +19,7 @@ class App extends React.Component {
     timer = () => {
         return setTimeout(() => {
             this.props.changeLoading()
-        }, 3000)
+        }, 0)
     }
 
     componentDidMount() {
