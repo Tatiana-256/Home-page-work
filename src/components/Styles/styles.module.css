@@ -53,3 +53,17 @@
 .r {
     background-color: #0065ff;
 }
+
+.sentBox {
+    display: flex;
+}
+
+.resultSucces {
+    color: #00005e;
+    padding: 10px;
+}
+
+.resultError {
+    color: #bd1f1f;
+    padding: 10px;
+}

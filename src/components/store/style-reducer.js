@@ -11,7 +11,6 @@ const initialState =
     {
         style: style.regular,
         success: true
-
     }
 
 const styleReducer = (state = initialState, action) => {
