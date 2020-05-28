@@ -1,5 +1,5 @@
 import {SENDING_DATA, SET_LOADING} from "./loading-reducer";
-import {CHANGE_SUCCESS, SET_BLACK_STYLE, SET_PINK_STYLE, SET_REGULAR_STYLE} from "./style-reducer";
+import {CHANGE_RESPONSE, CHANGE_SUCCESS, SET_BLACK_STYLE, SET_PINK_STYLE, SET_REGULAR_STYLE} from "./style-reducer";
 
 
 export const changeLoading = () => {
@@ -27,6 +27,11 @@ export const changeOnRegular = () => {
 export const changeSuccess = () => {
     return {
         type: CHANGE_SUCCESS
+    }
+}
+export const changeResponse = () => {
+    return {
+        type: CHANGE_RESPONSE
     }
 }
 

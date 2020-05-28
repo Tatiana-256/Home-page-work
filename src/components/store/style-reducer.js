@@ -5,12 +5,16 @@ export const SET_BLACK_STYLE = 'SET_BLACK_STYLE'
 export const SET_PINK_STYLE = 'SET_PINK_STYLE'
 export const SET_REGULAR_STYLE = 'SET_REGULAR_STYLE'
 export const CHANGE_SUCCESS = "CHANGE_SUCCESS"
+export const CHANGE_RESPONSE = "CHANGE_RESPONSE"
+
 
 
 const initialState =
     {
         style: style.regular,
-        success: true
+        success: true,
+        responseServer: false
+
     }
 
 const styleReducer = (state = initialState, action) => {
@@ -22,7 +26,9 @@ const styleReducer = (state = initialState, action) => {
         case SET_REGULAR_STYLE:
             return {...state, style: style.regular}
         case CHANGE_SUCCESS:
-            return {...state, success: !state.success}
+            return {...state, success: !state.success, responseServer: false}
+      case CHANGE_RESPONSE:
+            return {...state, responseServer: !state.responseServer}
     }
     return state;
 };
