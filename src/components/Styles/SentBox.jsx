@@ -1,18 +1,15 @@
 import React from 'react';
-import style from './styles.module.css'
-import {changeResponse, changeSuccess, sendData} from "../store/actions";
 import {connect} from "react-redux";
-import {api, tryCatch} from "./RequestAPI";
+
+import style from './styles.module.css'
+import {changeSuccess} from "../store/actions";
 import Preloader from "../Preloader/Preloader";
+import {sentDataRequest} from "../store/style-reducer";
 
 const SentBox = (props) => {
 
     const request = () => {
-        props.sendData(true)
-        tryCatch(api.changePriority(props.success)).then(res => {
-            props.changeResponse()
-            props.sendData(false)
-        })
+        props.sentDataRequest(props.success)
     }
     return <div>
 
@@ -48,18 +45,4 @@ const mapStateToProps = (state) => {
 }
 
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        changeSuccess: () => {
-            dispatch(changeSuccess())
-        },
-        sendData: (send) => {
-            dispatch(sendData(send))
-        },
-        changeResponse: () => {
-            dispatch(changeResponse())
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SentBox)
+export default connect(mapStateToProps, {sentDataRequest, changeSuccess})(SentBox)
