@@ -5,8 +5,26 @@ import style from './styles.module.css'
 import {actions} from "../store/actions";
 import Preloader from "../Preloader/Preloader";
 import {sentDataRequest} from "../store/style-reducer";
+import {AppStateType} from "../store/redux-store";
 
-const SentBox = (props) => {
+
+type mapStateToPropsType={
+    success: boolean
+    sendingData: boolean,
+    responseServer: boolean
+}
+
+type mapDispatchToPropsType =
+    {
+        sentDataRequest: (s: boolean)=>void
+        changeSuccess: ()=>void
+    }
+
+type OwnProps = {}
+
+type PropsType = mapStateToPropsType & mapDispatchToPropsType & OwnProps
+
+const SentBox = (props: PropsType) => {
 
     const request = () => {
         props.sentDataRequest(props.success)
@@ -36,7 +54,7 @@ const SentBox = (props) => {
     </div>
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: AppStateType) => {
     return {
         success: state.style.success,
         sendingData: state.loading.sendingData,
@@ -45,4 +63,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, {sentDataRequest, changeSuccess: actions.changeSuccess})(SentBox)
+export default connect<mapStateToPropsType, mapDispatchToPropsType, OwnProps, AppStateType>(mapStateToProps, {sentDataRequest, changeSuccess: actions.changeSuccess})(SentBox)
