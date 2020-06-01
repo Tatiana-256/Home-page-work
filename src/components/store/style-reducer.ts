@@ -1,6 +1,7 @@
 import style from '../Styles/styles.module.css'
 import {api, tryCatch} from "../Styles/RequestAPI";
-import {changeResponse, sendData} from "./actions";
+import {actions, ActionsType} from "./actions";
+import {baseThunkType} from "../../../../Social/Skrini_social_network/src/redux/redux-store";
 
 
 export const SET_BLACK_STYLE = 'SET_BLACK_STYLE'
@@ -9,7 +10,7 @@ export const SET_REGULAR_STYLE = 'SET_REGULAR_STYLE'
 export const CHANGE_SUCCESS = "CHANGE_SUCCESS"
 export const CHANGE_RESPONSE = "CHANGE_RESPONSE"
 
-
+type initialStateType = typeof initialState
 
 const initialState =
     {
@@ -19,7 +20,7 @@ const initialState =
 
     }
 
-const styleReducer = (state = initialState, action) => {
+const styleReducer = (state = initialState, action: ActionsType): initialStateType => {
     switch (action.type) {
         case SET_BLACK_STYLE:
             return {...state, style: style.black}
@@ -29,7 +30,7 @@ const styleReducer = (state = initialState, action) => {
             return {...state, style: style.regular}
         case CHANGE_SUCCESS:
             return {...state, success: !state.success, responseServer: false}
-      case CHANGE_RESPONSE:
+        case CHANGE_RESPONSE:
             return {...state, responseServer: !state.responseServer}
     }
     return state;
@@ -38,12 +39,15 @@ const styleReducer = (state = initialState, action) => {
 
 //---------------- thunk-creators---------------
 
-export const sentDataRequest = (success)=>(dispatch)=>{
-    dispatch(sendData(true))
-    tryCatch(api.changePriority(success)).then(res => {
-        dispatch(changeResponse())
-        dispatch(sendData(false))
-    })
+type thunkType = baseThunkType<ActionsType>
+
+
+export const sentDataRequest = (success: boolean): thunkType => async (dispatch) => {
+    dispatch(actions.sendData(true))
+    await tryCatch(api.changePriority(success))
+    dispatch(actions.changeResponse())
+    dispatch(actions.sendData(false))
+
 }
 
 

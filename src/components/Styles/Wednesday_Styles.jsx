@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './styles.module.css'
 import {connect} from "react-redux";
-import {changeOnBlack, changeOnPink, changeOnRegular} from "../store/actions";
+import {actions} from "../store/actions";
 import RequestAPI from "./SentBox";
 
 
@@ -40,13 +40,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         changeOnBlack: () => {
-            dispatch(changeOnBlack())
+            dispatch(actions.changeOnBlack())
         },
         changeOnPink: () => {
-            dispatch(changeOnPink())
+            dispatch(actions.changeOnPink())
         },
         changeOnRegular: () => {
-            dispatch(changeOnRegular())
+            dispatch(actions.changeOnRegular())
         }
 
     }

@@ -1,7 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import styles from './navigation.module.css'
-import Wednesday from "../Styles/Wednesday_Styles";
+
 
 const Navigation = () => {
     return (<div className={styles.navigation}>

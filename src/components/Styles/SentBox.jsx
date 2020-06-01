@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 
 import style from './styles.module.css'
-import {changeSuccess} from "../store/actions";
+import {actions} from "../store/actions";
 import Preloader from "../Preloader/Preloader";
 import {sentDataRequest} from "../store/style-reducer";
 
@@ -21,7 +21,7 @@ const SentBox = (props) => {
                 onChange={() => props.changeSuccess()}
                 id='input'
             />
-            <label for='input'/>
+            <label htmlFor='input'/>
             <button
                 disabled={props.sendingData}
                 className={style.r}
@@ -45,4 +45,4 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, {sentDataRequest, changeSuccess})(SentBox)
+export default connect(mapStateToProps, {sentDataRequest, changeSuccess: actions.changeSuccess})(SentBox)

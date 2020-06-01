@@ -6,7 +6,7 @@ import {Route} from "react-router-dom";
 import ToDoList from "./components/toDoList/ToDoList";
 import styles from './components/toDoList/loader.module.css'
 import {connect} from "react-redux";
-import {changeLoading} from "./components/store/actions";
+import {actions} from "./components/store/actions";
 import Wednesday from "./components/Styles/Wednesday_Styles";
 
 
@@ -54,7 +54,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         changeLoading: () => {
-            dispatch(changeLoading())
+            dispatch(actions.changeLoading())
         }
 
     }
