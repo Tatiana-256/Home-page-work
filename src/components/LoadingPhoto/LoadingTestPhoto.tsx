@@ -4,11 +4,11 @@ import styles from "./LoadingPhoto.module.css";
 // import {InfoIcon} from "../../../Common-files/components/InfoIcon/InfoIcon";
 import {Box} from './Box/Box';
 import {Camera} from './TakingPhoto/TakingPhoto';
-import {CameraDemo} from './test directoty/camera';
+// import { CameraDemo } from './test directoty/camera';
 // import {CameraDemo} from "./test directoty/camera";
 
 
-export const LoadingPhoto = () => {
+export const LoadingTestPhoto = () => {
 
     const [isCameraOpen, setIsCameraOpen] = useState(false);
     const [cardImage, setCardImage] = useState();
@@ -20,18 +20,18 @@ export const LoadingPhoto = () => {
     return <>
         {isCameraOpen ?
 
-            <CameraDemo
+            <Camera
                 onCapture={(blob: any) => setCardImage(blob)}
                 onClear={() => setCardImage(undefined)}
-            /> &&
-            <Camera
-                onCapture={blob => setCardImage(blob)}
-                onClear={() => setCardImage(undefined)}
             />
+            // <Camera
+            //     onCapture={blob => setCardImage(blob)}
+            //     onClear={() => setCardImage(undefined)}
+            // />
             :
             <div style={{height: "70vh", width: '80%'}}>
                 <div className={styles.loading_box}>
-                    DEMO
+                    own
                     {/*<InfoIcon headerText={'BILDER HOCHLADEN'} numberInfoPage={'405'}/>*/}
                     <div className={styles.boxes}>
                         <Box openCamera={() => setIsCameraOpen(true)}/>

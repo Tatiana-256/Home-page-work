@@ -9,6 +9,7 @@ import {connect} from "react-redux";
 import {actions} from "./components/store/actions";
 import Wednesday from "./components/Styles/Wednesday_Styles";
 import {LoadingPhoto} from "./components/LoadingPhoto/LoadingPhoto";
+import {LoadingTestPhoto} from "./components/LoadingPhoto/LoadingTestPhoto";
 
 
 class App extends React.Component {
@@ -36,13 +37,18 @@ class App extends React.Component {
             return (
                 // <div className="App">
                 //     <Navigation/>
-                //     <Route exact path="/monday" component={MessageBox}/>
-                //     <Route exact path="/tuesday" component={ToDoList}/>
+                // <div>
+                //     <Route path="/1" component={LoadingPhoto}/>
+                //     <Route exact path="/2" component={LoadingTestPhoto}/>
+                // </div>
                 //     <Route exact path="/wednesday" component={Wednesday}/>
                 //     <Route exact path="/load" component={LoadingPhoto}/>
-                <LoadingPhoto/>
+                <div>
 
-                // </div>
+                    <LoadingPhoto/>
+                    <LoadingTestPhoto/>
+
+                </div>
             )
         }
     }
