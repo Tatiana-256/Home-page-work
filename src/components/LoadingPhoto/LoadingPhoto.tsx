@@ -4,6 +4,7 @@ import styles from "./LoadingPhoto.module.css";
 // import {InfoIcon} from "../../../Common-files/components/InfoIcon/InfoIcon";
 import {Box} from './Box/Box';
 import {Camera} from './TakingPhoto/TakingPhoto';
+import { CameraDemo } from './test directoty/camera';
 // import {CameraDemo} from "./test directoty/camera";
 
 
@@ -19,14 +20,14 @@ export const LoadingPhoto = () => {
     return <>
         {isCameraOpen ?
 
-            // <CameraDemo
-            //     onCapture={(blob: any) => setCardImage(blob)}
-            //     onClear={() => setCardImage(undefined)}
-            // />
-            <Camera
-                onCapture={blob => setCardImage(blob)}
+            <CameraDemo
+                onCapture={(blob: any) => setCardImage(blob)}
                 onClear={() => setCardImage(undefined)}
             />
+            // <Camera
+            //     onCapture={blob => setCardImage(blob)}
+            //     onClear={() => setCardImage(undefined)}
+            // />
             :
             <div style={{height: "70vh", width: '80%'}}>
                 <div className={styles.loading_box}>
