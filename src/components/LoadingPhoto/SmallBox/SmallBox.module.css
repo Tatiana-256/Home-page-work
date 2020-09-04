@@ -1,0 +1,25 @@
+.boxComponent {
+    width: 9.4rem;
+    height: 9.4rem;
+    position: relative;
+    border: 1px dashed rgb(151, 151, 151);
+
+}
+
+.box {
+    width: 1.125rem;
+    height: 1.125rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    position: absolute;
+    width: 4.7rem;
+    height: 2.375rem;
+    left: 50%;
+    top: 73%;
+    transform: translate(-50%, -50%);
+}

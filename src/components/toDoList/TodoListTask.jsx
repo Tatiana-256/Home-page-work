@@ -64,8 +64,7 @@ class TodoListTask extends React.Component {
                                            autoFocus={true}
                                            value={this.props.task.title}/> :
                                     <span onClick={this.activateEditMode}>
-                            {this.props.task.id} - {this.props.task.title}
-                        </span>}
+                            {this.props.task.id} - {this.props.task.title} </span>}
                                 <div className="inner">
                                     <div>Created: {this.props.task.created}</div>
                                     {this.props.task.updated ? <div>Updated: {this.props.task.updated}</div> : ""}

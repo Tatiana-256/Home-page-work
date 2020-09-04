@@ -8,6 +8,7 @@ import styles from './components/toDoList/loader.module.css'
 import {connect} from "react-redux";
 import {actions} from "./components/store/actions";
 import Wednesday from "./components/Styles/Wednesday_Styles";
+import {LoadingPhoto} from "./components/LoadingPhoto/LoadingPhoto";
 
 
 class App extends React.Component {
@@ -33,13 +34,14 @@ class App extends React.Component {
             </div>
         } else {
             return (
-                <div className="App">
-                    <Navigation/>
-                    <Route exact path="/monday" component={MessageBox}/>
-                    <Route exact path="/tuesday" component={ToDoList}/>
-                    <Route exact path="/wednesday" component={Wednesday}/>
-
-                </div>
+                // <div className="App">
+                //     <Navigation/>
+                //     <Route exact path="/monday" component={MessageBox}/>
+                //     <Route exact path="/tuesday" component={ToDoList}/>
+                //     <Route exact path="/wednesday" component={Wednesday}/>
+                //     <Route exact path="/load" component={LoadingPhoto}/>
+                <LoadingPhoto/>
+                // </div>
             )
         }
     }
