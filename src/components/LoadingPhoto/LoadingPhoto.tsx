@@ -23,11 +23,12 @@ export const LoadingPhoto = () => {
             <CameraDemo
                 onCapture={(blob: any) => setCardImage(blob)}
                 onClear={() => setCardImage(undefined)}
-            /> &&
-            <Camera
-                onCapture={blob => setCardImage(blob)}
-                onClear={() => setCardImage(undefined)}
             />
+            // &&
+            // <Camera
+            //     onCapture={blob => setCardImage(blob)}
+            //     onClear={() => setCardImage(undefined)}
+            // />
             :
             <div style={{height: "70vh", width: '80%'}}>
                 <div className={styles.loading_box}>
