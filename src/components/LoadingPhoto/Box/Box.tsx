@@ -8,8 +8,7 @@ interface BoxPropsType {
 export const Box: React.FC<BoxPropsType> = ({openCamera}) => {
     return <>
         <div className={styles.boxComponent}>
-            <div onClick={openCamera} style={{width: '100px', height: '100px'}}>ff</div>
-            <div className={styles.text}>Build hinzufugen</div>
+            <button onClick={openCamera} style={{width: '100px', height: '50px'}}>open camera</button>
         </div>
     </>
 }

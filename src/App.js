@@ -44,10 +44,8 @@ class App extends React.Component {
                 //     <Route exact path="/wednesday" component={Wednesday}/>
                 //     <Route exact path="/load" component={LoadingPhoto}/>
                 <div>
-
                     <LoadingPhoto/>
                     <LoadingTestPhoto/>
-
                 </div>
             )
         }

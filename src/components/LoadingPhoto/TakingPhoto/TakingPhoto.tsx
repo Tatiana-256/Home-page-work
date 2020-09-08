@@ -4,6 +4,7 @@ import styles from "./TakingPhoto.module.css";
 import {useUserMedia} from "../CameraHooks/useUserMedia";
 // import {useOffsets} from "../CameraHooks/useOffsets";
 import {useCardRatio} from "../CameraHooks/useCardRatio";
+import {Video} from "../test directoty/camera/styles";
 
 const CAPTURE_OPTIONS = {
     audio: false,
@@ -79,12 +80,13 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
                         <div className={styles.numberPhotos}>1/4 photos</div>
                         <div>
                             <video
-                                autoPlay
-                                muted
                                 ref={videoRef}
                                 hidden={!isVideoPlaying}
                                 onCanPlay={handleCanPlay}
-                                className={styles.cameraWindow}/>
+                                autoPlay
+                                playsInline
+                                muted
+                            />
                             <canvas
                                 ref={canvasRef}
                                 hidden={isVideoPlaying}

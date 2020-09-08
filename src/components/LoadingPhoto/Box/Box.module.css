@@ -3,6 +3,9 @@
     height: 16.4rem;
     position: relative;
     border: 1px dashed rgb(151, 151, 151);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
