@@ -106,7 +106,7 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
                             <canvas
                                 ref={canvasRef}
                                 hidden={isVideoPlaying}
-                                style={{width: `${pictureWidth}px`, height: `${pictureHeight}px`}
+                                style={{width: `${340}px`, height: `${640}px`}
                                 }
                             />
                         </div>
