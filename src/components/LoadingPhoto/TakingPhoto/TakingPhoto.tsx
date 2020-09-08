@@ -47,8 +47,8 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
         videoRef.current.play();
     }
 
-    const height = window.innerHeight * 1.568
-    const width = window.innerWidth * 0.3
+    const height = window.innerHeight
+    const width = window.innerWidth * 1.568
     const maxWidth: number = window.innerHeight * 0.8
     const maxHeight: number = window.innerWidth * 0.8
 
