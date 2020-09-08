@@ -47,14 +47,29 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
         videoRef.current.play();
     }
 
-    const height = window.innerHeight * 0.3
-    const width = height * 1.586
+    const height = window.innerHeight
+    const width = window.innerWidth
+    const maxWidth: number = 340
+    const maxHeight: number = 620
+
     console.log(height, width)
+
+
+    function calculateAspectRatioFit(srcWidth: number, srcHeight: number,
+                                     maxWidth: number, maxHeight: number) {
+
+        const ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+
+        return {width: srcWidth * ratio, height: srcHeight * ratio};
+    }
+
+
+    const pictureHeight = calculateAspectRatioFit(width, height, maxWidth, maxHeight).width
+    const pictureWidth = calculateAspectRatioFit(width, height, maxWidth, maxHeight).height
 
     function handleCapture() {
         const context = canvasRef.current.getContext("2d");
-
-        context.drawImage(videoRef.current, 0, 0, width, height)
+        context.drawImage(videoRef.current, 0, 0, pictureWidth, pictureHeight)
         canvasRef.current.toBlob((blob: any) => onCapture(blob), "image/jpeg", 1);
         setIsVideoPlaying(false)
 
@@ -96,13 +111,13 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
                         </div>
 
                         <button
-                                type="submit"
-                                onClick={isVideoPlaying ? handleCapture
-                                    :
-                                    () => {
-                                        setIsVideoPlaying(true)
-                                        onClear()
-                                    }}
+                            type="submit"
+                            onClick={isVideoPlaying ? handleCapture
+                                :
+                                () => {
+                                    setIsVideoPlaying(true)
+                                    onClear()
+                                }}
                         >
                             {isVideoPlaying ? ' Take photo' : 'Try again'}
                         </button>
