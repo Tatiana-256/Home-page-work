@@ -69,7 +69,7 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
 
     function handleCapture() {
         const context = canvasRef.current.getContext("2d");
-        context.drawImage(videoRef.current, 0, 0, 340, 640)
+        context.drawImage(videoRef.current, 0, 0, pictureWidth, pictureHeight)
         canvasRef.current.toBlob((blob: any) => onCapture(blob), "image/jpeg", 1);
         setIsVideoPlaying(false)
 
@@ -106,7 +106,7 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
                             <canvas
                                 ref={canvasRef}
                                 hidden={isVideoPlaying}
-                                style={{width: `${340}px`, height: `${640}px`}
+                                style={{width: `${maxWidth}px`, height: `${maxHeight}px`}
                                 }
                             />
                         </div>
