@@ -49,8 +49,8 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
 
     const height = window.innerHeight
     const width = window.innerWidth
-    const maxWidth: number = 340
-    const maxHeight: number = 620
+    const maxWidth: number = window.innerHeight * 0.8
+    const maxHeight: number = window.innerWidth * 0.8
 
     console.log(height, width)
 
@@ -64,8 +64,8 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
     }
 
 
-    const pictureHeight = calculateAspectRatioFit(width, height, maxWidth, maxHeight).width
-    const pictureWidth = calculateAspectRatioFit(width, height, maxWidth, maxHeight).height
+    const pictureHeight = calculateAspectRatioFit(width, height, maxWidth, maxHeight).height
+    const pictureWidth = calculateAspectRatioFit(width, height, maxWidth, maxHeight).width
 
     function handleCapture() {
         const context = canvasRef.current.getContext("2d");
@@ -98,6 +98,7 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
                                 ref={videoRef}
                                 hidden={!isVideoPlaying}
                                 onCanPlay={handleCanPlay}
+                                className={styles.cameraWindow}
                                 autoPlay
                                 playsInline
                                 muted
@@ -105,7 +106,7 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
                             <canvas
                                 ref={canvasRef}
                                 hidden={isVideoPlaying}
-                                style={{width: `${width}px`, height: `${height}px`}
+                                style={{width: `${pictureWidth}px`, height: `${pictureHeight}px`}
                                 }
                             />
                         </div>
