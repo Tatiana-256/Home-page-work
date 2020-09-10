@@ -46,6 +46,7 @@ class App extends React.Component {
                 <div>
                     <LoadingTestPhoto/>
                     <LoadingPhoto/>
+                    <input type='file'/>
                 </div>
             )
         }

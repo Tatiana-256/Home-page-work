@@ -47,6 +47,10 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
         videoRef.current.play();
     }
 
+
+    // const height = window.innerHeight * 0.3
+    // const width = height * 1.586
+
     const height = window.innerHeight
     const width = window.innerWidth * 1.568
     const maxWidth: number = window.innerHeight * 0.8
@@ -69,6 +73,7 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
 
     function handleCapture() {
         const context = canvasRef.current.getContext("2d");
+        // context.drawImage(videoRef.current, 0, 0, width, height)
         context.drawImage(videoRef.current, 0, 0, pictureWidth, pictureHeight)
         canvasRef.current.toBlob((blob: any) => onCapture(blob), "image/jpeg", 1);
         setIsVideoPlaying(false)
@@ -106,7 +111,8 @@ export const Camera: React.FC<CameraProps> = ({onCapture, onClear}) => {
                             <canvas
                                 ref={canvasRef}
                                 hidden={isVideoPlaying}
-                                style={{width: `${maxWidth}px`, height: `${maxHeight}px`}
+                                // style={{width: `${width}px`, height: `${height}px`}
+                                style={{maxWidth: `${maxWidth}px`, maxHeight: `${maxHeight}px`}
                                 }
                             />
                         </div>
